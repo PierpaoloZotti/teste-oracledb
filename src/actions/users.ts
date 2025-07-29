@@ -12,11 +12,11 @@ export async function getUsers(){
 export async function createUser(formData: FormData){
     const data = {
         name : formData.get("name"),
-        prefered_name: formData.get("prefered_name") || ""
+        email: formData.get("email") || ""
     }
     await User.create({
         name: data.name,
-        prefered_name: data.prefered_name
+        email: data.email
     }
         
     )

@@ -4,7 +4,7 @@ import sequelize from "@/db_connection"
 class User extends Model{
     declare id: number
     declare name: string
-    declare prefered_name: string | null
+    declare email: string | null
     declare createdAt: Date
 }
 
@@ -19,7 +19,7 @@ User.init (
             type: DataTypes.STRING,
             allowNull: false,
         },
-        prefered_name: {
+        email: {
             type: DataTypes.STRING,
             allowNull: true,
         },
@@ -29,7 +29,7 @@ User.init (
         tableName: "users",
         sequelize,
         createdAt: "createdAt",
-        updatedAt: "updateAt"
+        updatedAt: "updatedAt"
     }
 )
 
